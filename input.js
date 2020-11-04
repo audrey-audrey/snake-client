@@ -47,6 +47,15 @@ const handleUserInput = function(key) {
     connection.write('Move: right');
   }
 
+  // Sending special messages 
+  switch (key) {
+    case '1':
+      connection.write('Say: MUAHAHA');
+      break;
+    case '2':
+      connection.write('Say: Nooo');
+    }
+
 };
 
 module.exports = {setupInput};
