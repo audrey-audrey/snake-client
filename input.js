@@ -32,19 +32,19 @@ const handleUserInput = function(key) {
 
   // 'w' for up etc....
   switch (key) {
-  case 'w':
-    //  You don't need to write conn.on('connection', .....) because a connection has already
-    // been established, it wont establish another connection so it wont execute
-    connection.write('Move: up');
-    break;
-  case 'a':
-    connection.write('Move: left');
-    break;
-  case 's':
-    connection.write('Move: down');
-    break;
-  case 'd':
-    connection.write('Move: right');
+    case 'w':
+      //  You don't need to write conn.on('connection', .....) because a connection has already
+      // been established, it wont establish another connection so it wont execute
+      connection.write('Move: up');
+      break;
+    case 'a':
+      connection.write('Move: left');
+      break;
+    case 's':
+      connection.write('Move: down');
+      break;
+    case 'd':
+      connection.write('Move: right');
   }
 
   // Sending special messages 
