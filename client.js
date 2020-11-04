@@ -23,10 +23,10 @@ const connect = function() {
     // Name
     conn.write('Name: ODD');
     // Commands
-    conn.write('Move: up');
-    conn.write('Move: down');
-    conn.write('Move: left');
-    conn.write('Move: right');
+    // setInterval(() => conn.write('Move: up'), 500);
+    // setTimeout(() => conn.write('Move: left'), 1000);
+    // setTimeout(() => conn.write('Move: down'), 1500);
+    // setTimeout(() => conn.write('Move: left'), 2000);
   });
 
   return conn;
