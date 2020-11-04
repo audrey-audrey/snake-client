@@ -4,6 +4,8 @@ const {connect} = require('./client');
 const {setupInput} = require('./input');
 
 console.log('Connecting ...');
-connect();
 
-setupInput();
+// connect(); => is this needed?
+
+// returned object from connect() as parameter in setupInput
+setupInput(connect());
