@@ -18,8 +18,16 @@ const connect = function() {
   // on the event that a connection event is made, print a message on screen
   conn.on('connect', () => console.log("Succesfully connected to game server!"));
 
-  // on the event that a connection event is made, send our Name message to server
-  conn.on('connect', () => conn.write('Name: AUD'));
+  // send message to server, can also register more 'connect' callbacks for each message
+  conn.on('connect', () => {
+    // Name
+    conn.write('Name: ODD');
+    // Commands
+    conn.write('Move: up');
+    conn.write('Move: down');
+    conn.write('Move: left');
+    conn.write('Move: right');
+  });
 
   return conn;
 }
