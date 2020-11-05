@@ -1,3 +1,5 @@
+const { messages } = require('./constants');
+
 // Stores the active TCP connection object.
 let connection;
 
@@ -25,37 +27,13 @@ const setupInput = function(conn) {
 
 // setupInput()
 const handleUserInput = function(key) {
-  // \u0003 maps to ctrl+c input which exits the process
-  if (key === '\u0003') {
-    process.exit();
-  }
+    // Exit
+    // \u0003 maps to ctrl+c input which exits the process
+    if(key === '\u0003') process.exit();
 
-  // 'w' for up etc....
-  switch (key) {
-    case 'w':
-      //  You don't need to write conn.on('connection', .....) because a connection has already
-      // been established, it wont establish another connection so it wont execute
-      connection.write('Move: up');
-      break;
-    case 'a':
-      connection.write('Move: left');
-      break;
-    case 's':
-      connection.write('Move: down');
-      break;
-    case 'd':
-      connection.write('Move: right');
-  }
-
-  // Sending special messages 
-  switch (key) {
-    case '1':
-      connection.write('Say: MUAHAHA');
-      break;
-    case '2':
-      connection.write('Say: Nooo');
-    }
-
+  // Sending commands and messages
+  // if messages has key, send out value!
+  if(messages.hasOwnProperty(key)) connection.write(messages[key]);
 };
 
 module.exports = {setupInput};

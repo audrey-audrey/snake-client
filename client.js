@@ -23,11 +23,6 @@ const connect = function() {
   conn.on('connect', () => {
     // Name
     conn.write('Name: ODD');
-    // Commands
-    // setInterval(() => conn.write('Move: up'), 500);
-    // setTimeout(() => conn.write('Move: left'), 1000);
-    // setTimeout(() => conn.write('Move: down'), 1500);
-    // setTimeout(() => conn.write('Move: left'), 2000);
   });
 
   return conn;
